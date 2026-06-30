@@ -38,7 +38,7 @@ The program combines:
 
 ---
 
-## �### 01. Applied Statistics
+### 01. Applied Statistics
 📁 [`01_Applied_Statistics/`](./01_Applied_Statistics/)
 📅 **Completed:** May 2021
 
