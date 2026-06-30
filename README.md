@@ -68,21 +68,28 @@ The program combines:
 
 ---
 ### 02. Supervised Learning
-📁 `02_Supervised_Learning/`
+📁 [`02_Supervised_Learning/`](./02_Supervised_Learning/)
+📅 **Completed:** July 2021
 
-**Core Topics:**
-- Linear and Logistic Regression
-- Decision Trees and Pruning
-- K-Nearest Neighbours (KNN)
-- Support Vector Machines (SVM)
-- Naive Bayes Classifier
-- Model evaluation: Accuracy, Precision, Recall, F1, AUC-ROC
-- Cross-validation and Train/Test split strategies
+**Topics Covered:**
+- **Linear Regression** — OLS cost function, gradient descent, R², residual analysis, multicollinearity (VIF)
+- **Logistic Regression** — sigmoid function, log-loss, decision boundary, L1/L2 regularisation, threshold tuning via `predict_proba`
+- **K-Nearest Neighbours (KNN)** — distance metrics (Euclidean, Manhattan, Minkowski), choosing optimal K, BallTree/KDTree algorithms, mandatory feature scaling
+- **Naive Bayes** — Bayes theorem, Gaussian/Multinomial/Bernoulli variants, Laplace smoothing, independence assumption
+- **Support Vector Machines (SVM)** — maximum-margin hyperplane, C (regularisation) and γ (gamma) parameters, kernel trick (Linear, RBF, Polynomial), multi-class strategies
+- **Model Evaluation** — confusion matrix, accuracy, precision, recall, F1-score, AUC-ROC, balanced accuracy; when NOT to use accuracy (imbalanced classes)
+- **Class Imbalance** — under-sampling, over-sampling, SMOTE (Synthetic Minority Oversampling Technique)
+- **Hyperparameter Tuning** — GridSearchCV with cross-validation, stratified train-test split
 
-**Tools:** Python, Scikit-learn, Pandas, Matplotlib
+**Project — Supervised Learning:**
+
+*Part 1 — Orthopaedic Patient Classification (KNN):* Classified patients into Normal / Hernia / Spondylolisthesis using 6 biomechanical features. Applied MinMaxScaler, balanced accuracy scoring (class imbalance), and GridSearchCV. Final model: KNN with K=19, BallTree algorithm, balanced accuracy = 0.756.
+
+*Part 2 — Bank Customer Loan Conversion (Logistic Regression + Naive Bayes):* Predicted whether a customer would take a loan on their credit card (targeted marketing). Applied SMOTE for class imbalance, StandardScaler, engineered target column from ambiguous data. Final model: Logistic Regression — better recall and F1 than Naive Bayes.
+
+**Tools:** Python, Pandas, NumPy, Scikit-learn, Imbalanced-learn (SMOTE), Matplotlib, Seaborn
 
 ---
-
 ### 03. Ensemble Techniques
 📁 `03_Ensemble_Techniques/`
 
@@ -325,4 +332,5 @@ pgp-ai-ml/
 ---
 
 *Last updated: June 2026*
+
 
