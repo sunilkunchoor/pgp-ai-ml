@@ -38,23 +38,35 @@ The program combines:
 
 ---
 
-## 📚 Module Details
+## �### 01. Applied Statistics
+📁 [`01_Applied_Statistics/`](./01_Applied_Statistics/)
+📅 **Completed:** May 2021
 
-### 01. Applied Statistics
-📁 `01_Applied_Statistics/`
+**Topics Covered:**
+- **Descriptive Statistics** — summarising datasets using mean, median, mode, variance, SD, IQR, skewness and kurtosis; visualised via histograms and box plots
+- **Probability Theory** — joint, marginal and conditional probability; Bayes theorem
+- **Probability Distributions** — Binomial (discrete, fixed trials), Poisson (event counts in intervals), Normal (continuous, symmetric); PMF/PDF/CDF using `scipy.stats`
+- **Confidence Intervals** — margin of error, significance level, effect of sample size
+- **Hypothesis Testing** — H₀ / H₁ definition, p-value interpretation, Type I & II errors
+- **One & Two Sample Tests** — one-sample z/t-test, independent two-sample t-test, paired t-test
+- **Test of Proportions & Variance** — z-test for proportions, F-test for variance equality
+- **ANOVA** — one-way ANOVA for comparing 3+ group means simultaneously
+- **Chi-Square Test** — independence test for categorical variables via contingency tables
+- **Statistical Power** — relationship between sample size, effect size, α and power (1 − β)
+- **Correlation & Covariance** — Pearson r, covariance matrix; correlation ≠ causation
+- **Central Limit Theorem** — sampling distribution of the mean converges to Normal as n → ∞
 
-**Core Topics:**
-- Descriptive statistics: mean, median, mode, variance, standard deviation
-- Probability theory and distributions (Normal, Binomial, Poisson)
-- Hypothesis testing: t-tests, chi-square, ANOVA
-- Confidence intervals and p-values
-- Correlation and covariance analysis
-- Central Limit Theorem
+**Project — Applied Statistics:**
 
-**Tools:** Python, NumPy, SciPy, Matplotlib, Seaborn
+*Part 1 — Probability & Distributions:* Solved 6 real-world problems using Binomial, Poisson and Normal distributions. Designed an e-learning question difficulty classifier (Easy 90%, Moderate 60%, Hard 30%) using `norm.cdf`.
+
+*Part 2 — Basketball Team Investment Analysis:* EDA and feature engineering (win %, avg baskets per game/tournament) on 61-team dataset. Identified confounding variable (team age) via correlation analysis. Shortlisted 6 investable teams (Team 21, 11, 39, 27, 47, 59) formed 1941–1998.
+
+*Part 3 — EU Startup Funding Analysis:* Hypothesis testing on Disrupt event funding data. H1: Operating vs Closed funds — t-test, p=0.1932 (fail to reject). H2: Winner vs Contestant operating rate — z-test, p=0.8767 (fail to reject). H3: Funds across NY/SF/EU — one-way ANOVA.
+
+**Tools:** Python, Pandas, NumPy, SciPy, Matplotlib, Seaborn
 
 ---
-
 ### 02. Supervised Learning
 📁 `02_Supervised_Learning/`
 
@@ -313,3 +325,4 @@ pgp-ai-ml/
 ---
 
 *Last updated: June 2026*
+
