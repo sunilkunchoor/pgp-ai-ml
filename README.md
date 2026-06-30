@@ -115,20 +115,34 @@ Predicted customer churn (Yes/No) for a telecom company to drive retention progr
 
 ---
 ### 04. Unsupervised Learning
-📁 `04_Unsupervised_Learning/`
+📁 [`04_Unsupervised_Learning/`](./04_Unsupervised_Learning/)
+📅 **Completed:** July 2021
 
-**Core Topics:**
-- K-Means Clustering (Elbow method, Silhouette score)
-- Hierarchical / Agglomerative Clustering
-- DBSCAN
-- Principal Component Analysis (PCA)
-- t-SNE for high-dimensional visualisation
-- Anomaly Detection
+**Topics Covered:**
+- **K-Means Clustering** — centroid-based partitioning; K-Means++ initialisation; Elbow Method (WCSS/inertia vs K) and Silhouette Score for choosing optimal K; mandatory feature scaling
+- **Hierarchical / Agglomerative Clustering** — builds a dendrogram bottom-up; linkage methods (Single, Complete, Average, Ward); Cophenetic Correlation Coefficient for validation; no need to pre-specify K
+- **K-Means vs Hierarchical** — speed, scalability, reproducibility, and use-case trade-offs
+- **Clustering for Missing Value Imputation** — use cluster centroids to impute missing values contextually, rather than global mean/median
+- **Synthetic Data Generation** — `KernelDensity` to model data distribution and sample synthetic points
+- **PCA (Principal Component Analysis)** — covariance matrix, eigenvectors/eigenvalues, explained variance ratio, scree plot; reduces features while preserving maximum variance; applied to tabular, image and text data
+- **Dimensionality Reduction Taxonomy** — Linear (PCA, SVD, NMF), Manifold Learning (t-SNE, Isomap, LLE, MDS), Feature Selection (VIF filter, RFE, forward/backward selection)
+- **t-SNE** — non-linear; for 2D/3D visualisation of clusters only; not suitable for model training
 
-**Tools:** Python, Scikit-learn, Matplotlib, Seaborn
+**Project — Unsupervised Learning (5 Parts):**
+
+*Part 1 — Car Clustering & Regression:* Merged car dataset (mpg, cylinders, horsepower, weight, origin). Cleaned `hp` column (regex-identified `"?"` values). K-Means (elbow→k=3) and Hierarchical (average linkage, highest Cophenetic score) both agreed on 3 clusters. Fitted separate Linear Regression per cluster to reveal cluster-specific feature relationships.
+
+*Part 2 — Wine Quality Imputation:* Used K-Means (k=2, bimodal data) to impute 18 missing quality scores by assigning missing rows to nearest cluster centroid. Bonus: synthetic data generation via `KernelDensity`.
+
+*Part 3 — Vehicle Shape Classification + PCA:* SVM on 18 silhouette features → high balanced accuracy. PCA reduced to 6 components (94% variance explained); SVM re-trained on 6 PCs lost only ~8% accuracy with 1/3 the features.
+
+*Part 4 — IPL Batsman Ranking:* PCA (eigenvalue ranking) + K-Means (k=4 via elbow + silhouette) used to rank 4 player tiers from batting statistics (runs, strike rate, fours, sixes, half-centuries).
+
+*Part 5 — Dimensionality Reduction Survey:* Catalogued all Python-available techniques (Linear, Manifold, Feature Selection); demonstrated PCA on image data (pixel compression and reconstruction).
+
+**Tools:** Python, Pandas, NumPy, Scikit-learn, SciPy (hierarchy), Imbalanced-learn, Matplotlib, Seaborn
 
 ---
-
 ### 05. Feature Engineering & Model Tuning
 📁 `05_Feature_Engineering_Model_Tuning/`
 
@@ -341,6 +355,7 @@ pgp-ai-ml/
 ---
 
 *Last updated: June 2026*
+
 
 
 
