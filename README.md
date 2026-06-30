@@ -91,20 +91,29 @@ The program combines:
 
 ---
 ### 03. Ensemble Techniques
-📁 `03_Ensemble_Techniques/`
+📁 [`03_Ensemble_Techniques/`](./03_Ensemble_Techniques/)
+📅 **Completed:** July 2021
 
-**Core Topics:**
-- Bias-Variance Trade-off
-- Bagging and Bootstrap Aggregation
-- Random Forests
-- Boosting: AdaBoost, Gradient Boosting, XGBoost, LightGBM
-- Stacking and Blending
-- Feature importance from ensemble models
+**Topics Covered:**
+- **Decision Trees (CART)** — Gini impurity vs Information Gain splitting, pre/post-pruning, depth and leaf controls
+- **Bias-Variance Trade-off** — bagging reduces variance, boosting reduces bias; total error decomposition
+- **Bagging** — bootstrap sampling of training data, aggregate predictions; decorrelates models to reduce variance
+- **Random Forest** — bagging + random feature subsets per split; OOB error, feature importance via mean decrease in impurity
+- **AdaBoost** — sequential boosting by up-weighting misclassified samples; `learning_rate`, decision stumps as weak learners
+- **Gradient Boosting (GBC)** — fits each new tree to residuals via gradient descent; `subsample` for stochastic boosting
+- **XGBoost** — regularised gradient boosting with L1/L2 penalties, native NaN handling, `scale_pos_weight` for class imbalance
+- **CatBoost** — gradient boosting with native categorical feature handling (no encoding needed), symmetric trees
+- **Model Comparison** — train vs test gap to detect overfitting; ROC AUC as comparison metric
+- **Class Imbalance (Advanced)** — ADASYN, SMOTETomek, SMOTEENN (beyond basic SMOTE)
+- **Model Serialisation** — pickling trained models (`.pkl`) for deployment; Flask GUI integration
 
-**Tools:** Python, Scikit-learn, XGBoost, LightGBM
+**Project — Telecom Customer Churn Prediction:**
+
+Predicted customer churn (Yes/No) for a telecom company to drive retention programmes. Dataset: ~7,000 customers × 21 features (services, account info, demographics). Applied ADASYN for class imbalance (~27% churn), manual categorical encoding, 70:30 train-test split. Trained and tuned 5 ensemble models (Random Forest, AdaBoost, GBC, CatBoost, XGBoost) using GridSearchCV. XGBoost overfit; CatBoost underfit; **Gradient Boosting Classifier** selected as final model (best train/test balance, highest ROC AUC). Model pickled and deployed as a Flask web app on Heroku.
+
+**Tools:** Python, Pandas, Scikit-learn, XGBoost, CatBoost, Imbalanced-learn, Pickle, Flask
 
 ---
-
 ### 04. Unsupervised Learning
 📁 `04_Unsupervised_Learning/`
 
@@ -332,5 +341,6 @@ pgp-ai-ml/
 ---
 
 *Last updated: June 2026*
+
 
 
